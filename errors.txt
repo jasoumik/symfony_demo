@@ -1,0 +1,16 @@
+Executing script cache:clear [OK]
+Executing script assets:install public [OK]
+Executing script security-checker security:check [KO]
+ [KO]
+Script security-checker security:check returned with error code 1
+!!
+!!    The web service failed for an unknown reason (HTTP 403).
+!!
+!!
+Script @auto-scripts was called via post-install-cmd
+
+
+$ php bin/console security:check
+
+  The web service failed for an unknown reason (HTTP 403).
+

@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SignupController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+    <nav class="navbar navbar-light bg-light" style="height: 100px;">
+        <a class="navbar-brand" href="{{ path('app_lucky_number') }}">
+            <i style="color: #444; font-size: 2rem;" class="pb-1 fad fa-cauldron"></i>
+            <p class="pl-2 d-inline font-weight-bold" style="color: #444;">Check your lucky number</p>
+        </a>
+        <button class="btn btn-dark">Sign up</button>
+    </nav>
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    <div class="alert alert-success" role="alert">
+        Testing bootstrap and assets working or not
+    </div>
+
+
+</div>
+    <div class="alert alert-primary" role="alert">
+        This is a primary alert—check it out!
+    </div>
+    <div class="alert alert-secondary" role="alert">
+        This is a secondary alert—check it out!
+    </div>
+    <div class="alert alert-success" role="alert">
+        This is a success alert—check it out!
+    </div>
+    <div class="alert alert-danger" role="alert">
+        This is a danger alert—check it out!
+    </div>
+    <div class="alert alert-warning" role="alert">
+        This is a warning alert—check it out!
+    </div>
+
+<h2>Answers</h2>
+    <ul class="list-unstyled">
+        {% for answer in answers %}
+            <li class="mb-4">
+                <div class="d-flex justify-content-center">
+                    <div class="mr-2 pt-2">
+
+                    </div>
+                    <div class="mr-3 pt-2">
+                        {{ answer }}
+                        <p>I fooled you. haha haahaa</p>
+                    </div>
+                    <div class="vote-arrows flex-fill pt-2 js_vote_change" style="min-width: 90px;">
+                        <a class="vote-up" href="#" data-direction="up"><i class="far fa-arrow-alt-circle-up"></i></a>
+                        <a class="vote-down" href="#" data-direction="down"><i class="far fa-arrow-alt-circle-down"></i></a>
+                        <span>+ <span class="js_total_vote">6</span></span>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+        <div class="col">
+            <a class="q-title" href="{{ path('app_signup_show1', { slug: 'reversing-a-spell' }) }}"><h2>Reversing a Spell</h2></a>
+        </div>
+
+<h2>Answers {{ answers|length }}</h2>
+{% endblock %}
