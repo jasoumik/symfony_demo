@@ -1,3 +1,5 @@
+
+
 Executing script cache:clear [OK]
 Executing script assets:install public [OK]
 Executing script security-checker security:check [KO]
@@ -13,4 +15,12 @@ Script @auto-scripts was called via post-install-cmd
 $ php bin/console security:check
 
   The web service failed for an unknown reason (HTTP 403).
+
+
+$ php bin/console router:match http://symfony.local/comments/10/vote/up --method=POST
+
+
+
+ [ERROR] None of the routes match the path
+         "http://symfony.local/comments/10/vote/up"
 
