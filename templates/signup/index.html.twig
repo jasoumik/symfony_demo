@@ -6,7 +6,16 @@
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    /* Make the image fully responsive */
+    .carousel-inner img {
+        width: 100%;
+        height: 100%;
+    }
 </style>
+
+
+<div class="example-wrapper">
+
     <nav class="navbar navbar-light bg-light" style="height: 100px;">
         <a class="navbar-brand" href="{{ path('app_lucky_number') }}">
             <i style="color: #444; font-size: 2rem;" class="pb-1 fad fa-cauldron"></i>
@@ -14,7 +23,6 @@
         </a>
         <button class="btn btn-dark">Sign up</button>
     </nav>
-<div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
 
     <div class="alert alert-success" role="alert">
@@ -23,12 +31,7 @@
 
 
 </div>
-    <div class="alert alert-primary" role="alert">
-        This is a primary alert—check it out!
-    </div>
-    <div class="alert alert-secondary" role="alert">
-        This is a secondary alert—check it out!
-    </div>
+
     <div class="alert alert-success" role="alert">
         This is a success alert—check it out!
     </div>
@@ -49,7 +52,7 @@
                     </div>
                     <div class="mr-3 pt-2">
                         {{ answer }}
-                        <p>I fooled you. haha haahaa</p>
+                        <p>What's up?</p>
                     </div>
                     <div class="vote-arrows flex-fill pt-2 js_vote_change" style="min-width: 90px;">
                         <a class="vote-up" href="#" data-direction="up"><i class="far fa-arrow-alt-circle-up"></i></a>
@@ -61,9 +64,41 @@
         {% endfor %}
     </ul>
 
-        <div class="col">
+    <div class="col">
             <a class="q-title" href="{{ path('app_signup_show1', { slug: 'reversing-a-spell' }) }}"><h2>Reversing a Spell</h2></a>
         </div>
+
+
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ asset('1.jpg') }}" alt="Los Angeles" width="1100" height="500">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('2.jpg') }}" alt="Chicago" width="1100" height="500">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('3.jpg') }}" alt="New York" width="1100" height="500">
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
 
 <h2>Answers {{ answers|length }}</h2>
 {% endblock %}
